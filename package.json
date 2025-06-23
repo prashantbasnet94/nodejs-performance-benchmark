@@ -1,27 +1,50 @@
 {
   "name": "express-vs-fastify-test",
   "version": "1.0.0",
-  "description": "Performance comparison between Express and Fastify",
+  "description": "Performance comparison between Express, Fastify, Koa, and Next.js",
   "main": "index.js",
   "scripts": {
     "express": "ts-node express-test.ts",
     "fastify": "ts-node fastify-test.ts",
+    "koa": "ts-node koa-test.ts",
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start -p 3002",
     "test:express": "node -r ts-node/register express-test.ts",
     "test:fastify": "node -r ts-node/register fastify-test.ts",
-    "benchmark": "echo 'Install autocannon globally: npm install -g autocannon' && echo 'Then run: autocannon -c 100 -d 10 http://localhost:3000/api/users/123'"
+    "test:koa": "node -r ts-node/register koa-test.ts",
+    "benchmark": "echo 'Install autocannon globally: npm install -g autocannon' && echo 'Then run: ./benchmark.sh'"
   },
   "dependencies": {
+    "@koa/router": "^12.0.1",
     "express": "^4.18.2",
-    "fastify": "^4.24.3"
+    "fastify": "^4.24.3",
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.1",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/koa": "^2.13.12",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa__router": "^12.0.4",
     "@types/node": "^20.10.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
     "pino-pretty": "^10.3.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
-  "keywords": ["express", "fastify", "performance", "benchmark"],
+  "keywords": [
+    "express",
+    "fastify",
+    "koa",
+    "nextjs",
+    "performance",
+    "benchmark"
+  ],
   "author": "Your Name",
   "license": "MIT"
 }
